@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import css from './Stats_el.module.css'
+import { Label, Percentage } from './StatsEl.styled';
 
 export const StatsEl = ({label, percentage }) =>{
     return (
-        <div>
-            <span className={css.label}>{label}</span>
-            <span className={css.percentage}>{percentage} %</span>
-        </div>
+        <>
+            <Label>{label}</Label>
+            <Percentage>{percentage}%</Percentage>
+        </>
     )
     }
 

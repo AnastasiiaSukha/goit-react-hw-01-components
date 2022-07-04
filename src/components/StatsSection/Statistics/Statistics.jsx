@@ -1,19 +1,24 @@
 import PropTypes from 'prop-types';
-import { StatsEl } from 'components/Stats_el/Stats_el';
-import css from './Statistics.module.css'
+import { StatsEl } from 'components/StatsSection/StatsEl/StatsEl';
+import { StatsList, StatItem } from './Statistic.styled';
+
+function setBackgroundColor() {
+   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
 
 export const Statistics = ({stats}) => {
     return (
-        <ul className={css.statList}>
+        <StatsList>
              {stats.map(stat => (
-                 <li className={css.statItem} key={stat.id}>
+                 <StatItem key={stat.id} randomColor={setBackgroundColor()}>
                      <StatsEl
                          label={stat.label}
                          percentage={stat.percentage} />
                      
-        </li>
+        </StatItem>
              ))}  
-        </ul>
+        </StatsList>
     )
 }
 
